@@ -681,7 +681,7 @@ def save_aggregated_eval_result(model_answer_id: int, threshold: float, aggregat
                 partially_correct_merged, partially_correct_unmerged, partially_correct_unmatched,
                 irrelevant_correct_merged, irrelevant_correct_unmerged, irrelevant_correct_unmatched,
                 stats)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """, (
                 model_answer_id,
                 threshold,
