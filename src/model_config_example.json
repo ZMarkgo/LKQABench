@@ -1,0 +1,10 @@
+{
+    "models": [
+        {
+            "new_model": false,
+            "llm_model_id": 5,
+            "model_name": "moonshot-v1-auto",
+            "model_remark": "Kimi官方API，moonshot-v1-auto模型，auto表示会自动切换模型"
+        }
+    ]
+}

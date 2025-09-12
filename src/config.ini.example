@@ -1,0 +1,59 @@
+[default]
+log_file = logs/log.log
+
+[db_config]
+host = 127.0.0.1
+user = root
+password = password
+database = database_name
+; 用于加密API Key的密钥
+api_key_secret_key = api_key_secret_key
+
+[llm_qa_eval_fetch]
+log_file = logs/llm-qa-eval-fetch.log
+; 被测大模型配置文件路径：json格式
+eval_models_config_file_path = ./llm_qa_eval_fetch_eval_models.json
+
+[llm_qa_eval_judge]
+log_file = logs/llm-qa-eval-judge.log
+; 被测大模型配置文件路径：json格式
+eval_models_config_file_path = ./llm_qa_eval_judge_eval_models.json
+; 裁判大模型配置文件路径：json格式
+judge_models_config_file_path = ./llm_qa_eval_judge_judge_models.json
+
+[llm_qa_eval_fusion]
+log_file = logs/llm-qa-eval-fusion.log
+; 被测大模型配置文件路径：json格式
+eval_models_config_file_path = ./llm_qa_eval_fusion_eval_models.json
+; 裁判大模型配置文件路径：json格式
+judge_models_config_file_path = ./llm_qa_eval_fusion_judge_models.json
+
+[llm_qa_eval_score]
+log_file = logs/llm-qa-eval-score.log
+; 问答对来源：all表示所有问答对，list表示指定问答对列表
+qa_src = all
+; qa_src为list时生效，使用逗号分隔多个id
+qa_id_list = 
+; 指定模型ID列表，为空表示所有模型，使用逗号分隔多个id
+model_id_list = 4,5,6,8,11,15,17,18,19,20,21
+; 数据集版本
+dataset_version = 3
+; 数据集来源
+dataset_source = 0
+; 输出文件路径
+output_file = score_results.json
+; 评分权重配置
+coverage_weight = 50.0
+accuracy_weight = 30.0
+clarity_weight = 20.0
+; 惩罚参数配置
+factual_error_penalty = 15.0
+misleading_penalty = 10.0
+vague_penalty = 8.0
+irrelevant_penalty = 5.0
+; 覆盖率评分方法：0=融合前, 1=通过率, 2=融合后, 3=ROUGE-L, 4=METEOR
+coverage_score_method = 2
+; 对未融合的结果列表进行惩罚
+unmerged_errors_valid = false
+; 保证正确性与清晰度为正
+accuracy_and_clarity_positive = true

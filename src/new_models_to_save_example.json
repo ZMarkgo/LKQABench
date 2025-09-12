@@ -1,0 +1,44 @@
+{
+    "models": [
+        {
+            "new_model": true,
+            "model_name": "DeepSeek-R1",
+            "model_id": "ep-20250225122601-br465",
+            "api_key": "Your API Key",
+            "base_url": "https://xxxx/api/v3/",
+            "model_remark": "DeepSeek-R1模型",
+            "api_type": "Deepseek",
+            "model_type": "reasoning"
+        },
+        {
+            "new_model": true,
+            "model_name": "DeepSeek-V3",
+            "model_id": "deepseek-v3",
+            "api_key": "填入你的API Key",
+            "base_url": "填入你的Base URL",
+            "model_remark": "DeepSeek-V3模型",
+            "api_type": "OpenAI",
+            "model_type": "chat"
+        },
+        {
+            "new_model": true,
+            "model_name": "Claude 3.5 Sonnet",
+            "model_id": "claude-3-5-sonnet-20241022",
+            "api_key": "填入你的API Key",
+            "base_url": "填入你的Base URL",
+            "model_remark": "Claude 3.5 Sonnet模型",
+            "api_type": "OpenAI",
+            "model_type": "chat"
+        },
+        {
+            "new_model": true,
+            "model_name": "GPT-4o",
+            "model_id": "gpt-4o-2024-11-20",
+            "api_key": "填入你的API Key",
+            "base_url": "填入你的Base URL",
+            "model_remark": "GPT-4o模型",
+            "api_type": "OpenAI",
+            "model_type": "chat"
+        }
+    ]
+}
