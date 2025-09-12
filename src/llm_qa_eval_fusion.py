@@ -698,10 +698,10 @@ def save_aggregated_eval_result(model_answer_id: int, threshold: float, aggregat
                 json.dumps(vague_statements['unmatched_results']),
                 json.dumps(partially_correct['merged_results']),
                 json.dumps(partially_correct['unmerged_results']),
-                json.dumps(partially_correct['unmerged_results']),
+                json.dumps(partially_correct['unmatched_results']),
                 json.dumps(irrelevant_correct['merged_results']),
                 json.dumps(irrelevant_correct['unmerged_results']),
-                json.dumps(irrelevant_correct['unmerged_results']),
+                json.dumps(irrelevant_correct['unmatched_results']),
                 json.dumps(aggregated_result['stats'])
             ))
             
