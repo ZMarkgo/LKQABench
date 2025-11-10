@@ -8,9 +8,41 @@ LKQABench 是**首个面向Linux 内核开发知识的高质量问答评测基�
 
 本仓库公开了 **LKQABench构造过程中使用的Prompt** 以及 **MJ-CCE的全流程代码**，为后续研究提供了可复现、可扩展的评测基准。
 
-## Prompts
+## 数据集说明
 
-我们的**数据集构造**与**自动化评估方法**中使用了众多大模型，方法具有通用性，具体的 prompt 细节参见[prompts.md](./prompts.md)文档。
+**LKQABench** 数据集存储于文件 [LKQABench.json](./dataset/LKQABench.json) 中，共包含 **202 个问答对**。
+每个问答样本由以下字段组成：
+
+* **`id`**：问答对的唯一标识符。
+* **`question`**：标准问题文本。
+* **`answer`**：对应的参考答案。
+* **`key_points`**：答案中的关键知识点列表。
+* **`topics`**：主题维度问题分类。
+* **`cognitive_level`**：认知维度问题分类。
+* **`is_version_specific`**：版本相关性问题分类。
+
+以下为一个示例条目：
+
+```json
+{
+    "id": 9,
+    "question": "How does POSIX Message Queue differ from System V IPC message queue?",
+    "answer": "POSIX Message Queue extends System V IPC message queue by adding functionalities such as a simple file-based interface to the application, support for message priorities, support for asynchronous notification, and timeouts for blocking operations.",
+    "key_points": [
+        "Simple file-based interface",
+        "Support for message priorities",
+        "Support for asynchronous notification",
+        "Timeouts for blocking operations"
+    ],
+    "topics": ["进程管理"],
+    "cognitive_level": "机制理解层",
+    "is_version_specific": 0
+}
+```
+
+## 构造过程中使用的 Prompts
+
+我们的**数据集构造**过程中使用了众多大模型，方法具有通用性，具体的 prompt 细节参见[prompts.md](./prompts.md)文档。
 
 ## MJ-CCE 使用方法
 
